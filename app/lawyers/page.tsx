@@ -1,5 +1,4 @@
 import { PageShell, PageHeader } from '@/components/page-shell'
-import { Check } from 'lucide-react'
 
 export const metadata = {
   title: 'Lawyers — The NewinCo, Inc.',
@@ -54,16 +53,18 @@ export default function LawyersPage() {
 
       <section className="mt-12">
         <h2 className="font-heading text-2xl text-primary">Our Course of Action</h2>
-        <ol className="mt-6 space-y-3">
+        <ol className="relative mt-8 ml-1">
+          {/* continuous vertical line spanning the full timeline */}
+          <span
+            aria-hidden="true"
+            className="absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-secondary via-border to-transparent"
+          />
           {steps.map((step, i) => (
-            <li
-              key={i}
-              className="flex items-start gap-4 rounded-xl border border-border/70 bg-card/60 p-5 backdrop-blur-sm"
-            >
-              <span className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
-                <Check className="size-4" />
+            <li key={i} className="relative flex gap-6 pb-8 last:pb-0">
+              <span className="relative z-10 flex size-9 shrink-0 items-center justify-center rounded-full border border-secondary/60 bg-secondary font-heading text-sm font-semibold text-secondary-foreground shadow-sm">
+                {i + 1}
               </span>
-              <span className="leading-relaxed text-foreground/90">{step}</span>
+              <p className="pt-1 leading-relaxed text-foreground/90">{step}</p>
             </li>
           ))}
         </ol>
