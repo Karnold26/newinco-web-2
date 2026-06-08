@@ -31,23 +31,22 @@ export default function HomePage() {
       <SiteHeader />
 
       <main>
-        {/* Hero */}
-        <section className="mx-auto max-w-6xl px-4 pb-12 pt-16 sm:px-6 sm:pt-24">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <section className="mx-auto max-w-6xl px-4 pb-16 pt-20 sm:px-6 sm:pt-28">
+          <div className="grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
             <div>
-              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-ring">
+              <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
                 Worldwide Attorney Search &amp; Acquisition
               </p>
-              <h1 className="text-balance font-heading text-4xl leading-tight text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="text-balance font-heading text-4xl font-normal leading-[1.1] text-foreground sm:text-5xl lg:text-6xl">
                 Your Navigator In The Search For Legal Excellence
               </h1>
-              <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
+              <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground">
                 The NewinCo is a boutique firm specializing in the placement of
                 top legal talent in Washington and around the world. We have
                 been matching the best firms with the best practitioners
                 through market gyrations dating back to the 1970s.
               </p>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-3">
                 <Button
                   size="lg"
                   nativeButton={false}
@@ -67,33 +66,30 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="rounded-2xl border border-border/70 bg-card/70 p-8 shadow-sm backdrop-blur-sm">
-                <Image
-                  src="/newinco-logo.jpg"
-                  alt="The NewinCo logo"
-                  width={194}
-                  height={86}
-                  priority
-                  className="h-auto w-44"
-                />
-                <p className="mt-6 font-heading text-xl text-primary">
-                  Matching the best firms with the best practitioners.
-                </p>
-                <div className="mt-6 space-y-2 text-sm text-muted-foreground">
-                  <p>1455 Pennsylvania Avenue, NW</p>
-                  <p>Suite 1180</p>
-                  <p>Washington, DC 20004</p>
-                </div>
+            <div className="nc-surface p-8">
+              <Image
+                src="/newinco-logo.jpg"
+                alt="The NewinCo logo"
+                width={194}
+                height={86}
+                priority
+                className="h-auto w-40"
+              />
+              <p className="mt-6 font-heading text-lg text-foreground">
+                Matching the best firms with the best practitioners.
+              </p>
+              <div className="mt-6 space-y-1 text-sm text-muted-foreground">
+                <p>1455 Pennsylvania Avenue, NW</p>
+                <p>Suite 1180</p>
+                <p>Washington, DC 20004</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Intro narrative */}
         <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-          <div className="grid gap-8 rounded-2xl border border-border/70 bg-card/60 p-8 backdrop-blur-sm sm:p-10 lg:grid-cols-2">
-            <p className="text-pretty leading-relaxed text-foreground/90">
+          <div className="nc-surface grid gap-8 p-8 sm:p-10 lg:grid-cols-2">
+            <p className="text-pretty leading-relaxed text-foreground/85">
               Whether you are in search of a new professional home, or expanded
               expertise for your firm, we have the background, experience and
               market information to guide you. We have moved individuals and
@@ -102,7 +98,7 @@ export default function HomePage() {
               professionalism, because that is how our clients conduct their
               business.
             </p>
-            <p className="text-pretty leading-relaxed text-foreground/90">
+            <p className="text-pretty leading-relaxed text-foreground/85">
               The members of our firm have seen the legal world from all
               sides&mdash;as practitioners, support staff, in-house recruiters,
               and marketing professionals within law firms. We are insiders with
@@ -113,18 +109,17 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Highlights */}
         <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-3">
             {highlights.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur-sm transition-shadow hover:shadow-md"
+                className="nc-surface p-6 transition-colors hover:border-foreground/15"
               >
-                <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                  <item.icon className="size-5" />
+                <span className="inline-flex size-9 items-center justify-center rounded-md border border-border text-foreground">
+                  <item.icon className="size-4" />
                 </span>
-                <h3 className="mt-4 font-heading text-lg text-primary">
+                <h3 className="mt-4 font-heading text-base text-foreground">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -135,14 +130,13 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-          <div className="flex flex-col items-center gap-6 rounded-2xl border border-border/70 bg-primary px-8 py-12 text-center text-primary-foreground">
-            <Compass className="size-8" />
-            <h2 className="text-balance font-heading text-2xl sm:text-3xl">
+          <div className="flex flex-col items-center gap-6 rounded-lg bg-primary px-8 py-14 text-center text-primary-foreground">
+            <Compass className="size-7 opacity-80" />
+            <h2 className="text-balance font-heading text-2xl font-normal sm:text-3xl">
               Let us navigate these waters with you.
             </h2>
-            <p className="max-w-2xl text-pretty leading-relaxed text-primary-foreground/80">
+            <p className="max-w-2xl text-pretty text-sm leading-relaxed text-primary-foreground/75 sm:text-base">
               We listen. We research. We analyze. We advise. We facilitate. We
               place. Reach out to begin a confidential conversation.
             </p>

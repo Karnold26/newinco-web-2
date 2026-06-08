@@ -22,8 +22,8 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link
           href="/"
           className="flex items-center gap-3"
@@ -35,13 +35,12 @@ export function SiteHeader() {
             width={194}
             height={86}
             priority
-            className="h-11 w-auto"
+            className="h-10 w-auto"
           />
           <span className="sr-only">The NewinCo, Inc.</span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active = pathname === link.href
             return (
@@ -49,19 +48,21 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                  'relative px-3 py-2 text-[0.8125rem] font-medium tracking-wide transition-colors',
                   active
-                    ? 'bg-secondary text-secondary-foreground'
-                    : 'text-foreground/70 hover:bg-secondary/60 hover:text-foreground',
+                    ? 'text-foreground'
+                    : 'text-muted-foreground hover:text-foreground',
                 )}
               >
                 {link.label}
+                {active && (
+                  <span className="absolute inset-x-3 -bottom-[17px] h-px bg-foreground" />
+                )}
               </Link>
             )
           })}
         </nav>
 
-        {/* Mobile toggle */}
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -69,14 +70,13 @@ export function SiteHeader() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
         >
-          {open ? <X className="size-6" /> : <Menu className="size-6" />}
+          {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <nav
-          className="border-t border-border/70 bg-background/95 px-4 py-2 lg:hidden"
+          className="border-t border-border bg-background px-4 py-2 lg:hidden"
           aria-label="Mobile"
         >
           {navLinks.map((link) => {
@@ -87,10 +87,10 @@ export function SiteHeader() {
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className={cn(
-                  'block rounded-md px-3 py-2.5 text-sm font-medium transition-colors',
+                  'block border-l-2 px-3 py-2.5 text-sm font-medium transition-colors',
                   active
-                    ? 'bg-secondary text-secondary-foreground'
-                    : 'text-foreground/80 hover:bg-secondary/60',
+                    ? 'border-foreground text-foreground'
+                    : 'border-transparent text-muted-foreground hover:text-foreground',
                 )}
               >
                 {link.label}

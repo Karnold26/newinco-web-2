@@ -13,7 +13,7 @@ export default function KennonArnoldPage() {
     <PageShell>
       <Link
         href="/about"
-        className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+        className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
       >
         <ArrowLeft className="size-4" aria-hidden="true" />
         Back to Our Team
@@ -25,7 +25,7 @@ export default function KennonArnoldPage() {
         intro="Recruiting professional focused on attorney recruiting and lateral partner movement."
       />
 
-      <div className="max-w-3xl space-y-6 rounded-2xl border border-border/70 bg-card/60 p-8 leading-relaxed text-foreground/90 backdrop-blur-sm">
+      <div className="nc-surface max-w-3xl space-y-6 p-8 leading-relaxed text-foreground/85">
         <p>
           Kennon Arnold is a recruiting professional focused on attorney
           recruiting and lateral partner movement. He brings a research-driven
@@ -46,21 +46,18 @@ export default function KennonArnoldPage() {
         </p>
       </div>
 
-      <div className="mt-8 rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur-sm">
-        <h2 className="font-heading text-lg text-primary">Contact</h2>
+      <div className="nc-surface mt-6 p-6">
+        <h2 className="font-heading text-base text-foreground">Contact</h2>
         <ul className="mt-4 space-y-2.5 text-sm">
           <li className="flex items-center gap-2.5 text-muted-foreground">
-            <Phone className="size-4 shrink-0 text-ring" aria-hidden="true" />
-            <a
-              href="tel:2029731323"
-              className="hover:text-foreground"
-            >
+            <Phone className="size-4 shrink-0" aria-hidden="true" />
+            <a href="tel:2029731323" className="hover:text-foreground">
               202-973-1323
             </a>
             <span className="text-xs uppercase tracking-wide">direct</span>
           </li>
           <li className="flex items-center gap-2.5 text-muted-foreground">
-            <Mail className="size-4 shrink-0 text-ring" aria-hidden="true" />
+            <Mail className="size-4 shrink-0" aria-hidden="true" />
             <a
               href="mailto:lkappock@newinco.com"
               className="break-all hover:text-foreground"

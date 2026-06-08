@@ -38,8 +38,8 @@ export default function ServicesPage() {
         title="We Listen. We Research. We Analyze. We Advise. We Facilitate. We Place."
       />
 
-      <div className="grid gap-8 lg:grid-cols-2">
-        <div className="space-y-5 rounded-2xl border border-border/70 bg-card/60 p-8 leading-relaxed text-foreground/90 backdrop-blur-sm">
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="nc-surface space-y-5 p-8 leading-relaxed text-foreground/85">
           <p>There are two kinds of legal recruiters.</p>
           <p>
             There are those who will place anyone anywhere as long as there&apos;s
@@ -59,7 +59,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="space-y-5 rounded-2xl border border-border/70 bg-card/60 p-8 leading-relaxed text-foreground/90 backdrop-blur-sm">
+        <div className="nc-surface space-y-5 p-8 leading-relaxed text-foreground/85">
           <p>
             Our services do not end when a placement is made. We provide as much
             follow-up counseling and support as is needed to ensure success. In
@@ -81,24 +81,24 @@ export default function ServicesPage() {
       </div>
 
       <section className="mt-14">
-        <h2 className="font-heading text-2xl text-primary">
+        <h2 className="font-heading text-xl text-foreground">
           Four major areas of search and acquisition
         </h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {services.map((service, i) => (
             <div
               key={service.title}
-              className="rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur-sm transition-shadow hover:shadow-md"
+              className="nc-surface p-6 transition-colors hover:border-foreground/15"
             >
               <div className="flex items-center gap-4">
-                <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-                  <service.icon className="size-5" />
+                <span className="inline-flex size-9 items-center justify-center rounded-md border border-border text-foreground">
+                  <service.icon className="size-4" />
                 </span>
-                <span className="font-heading text-sm text-ring">
+                <span className="font-mono text-xs text-muted-foreground">
                   {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
-              <h3 className="mt-4 font-heading text-lg text-primary">
+              <h3 className="mt-4 font-heading text-base text-foreground">
                 {service.title}
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

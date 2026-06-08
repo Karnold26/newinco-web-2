@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react'
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 border-t border-border/70 bg-primary text-primary-foreground">
+    <footer className="mt-24 border-t border-border bg-primary text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
           <h3 className="font-heading text-lg">The NewinCo, Inc.</h3>

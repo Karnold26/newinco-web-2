@@ -16,11 +16,11 @@ export default function ResourcesPage() {
       />
 
       <div className="grid gap-6 sm:grid-cols-2">
-        <article className="group rounded-2xl border border-border/70 bg-card/60 p-7 backdrop-blur-sm transition-shadow hover:shadow-md">
-          <span className="inline-flex size-11 items-center justify-center rounded-lg bg-secondary text-secondary-foreground">
-            <FileText className="size-5" />
+        <article className="nc-surface group p-7 transition-colors hover:border-foreground/15">
+          <span className="inline-flex size-9 items-center justify-center rounded-md border border-border text-muted-foreground">
+            <FileText className="size-4" />
           </span>
-          <h2 className="mt-4 font-heading text-xl text-primary">
+          <h2 className="mt-4 font-heading text-lg text-foreground">
             Bev&apos;s Tips for A Better Work Life
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

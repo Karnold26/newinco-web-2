@@ -66,7 +66,7 @@ export default function ContactPage() {
         intro="We conduct our business with the utmost discretion. Reach out to begin a confidential conversation."
       />
 
-      <div className="mb-10 rounded-2xl border border-border/70 bg-primary p-8 text-primary-foreground">
+      <div className="mb-10 rounded-lg bg-primary p-8 text-primary-foreground">
         <h2 className="flex items-center gap-2 font-heading text-xl">
           <MapPin className="size-5" />
           Mailing Address
@@ -84,13 +84,13 @@ export default function ContactPage() {
         {contacts.map((c) => (
           <div
             key={c.name}
-            className="rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur-sm transition-shadow hover:shadow-md"
+            className="nc-surface p-6 transition-colors hover:border-foreground/15"
           >
-            <h3 className="font-heading text-lg text-primary">
+            <h3 className="font-heading text-base text-foreground">
               {c.bioHref ? (
                 <Link
                   href={c.bioHref}
-                  className="transition-colors hover:text-ring"
+                  className="transition-colors hover:text-muted-foreground"
                 >
                   {c.name}
                 </Link>
@@ -101,7 +101,7 @@ export default function ContactPage() {
             <ul className="mt-4 space-y-2.5 text-sm">
               {c.direct && (
                 <li className="flex items-center gap-2.5 text-muted-foreground">
-                  <Phone className="size-4 shrink-0 text-ring" />
+                  <Phone className="size-4 shrink-0 text-muted-foreground" />
                   <a href={`tel:${c.direct.replace(/-/g, '')}`} className="hover:text-foreground">
                     {c.direct}
                   </a>
@@ -110,7 +110,7 @@ export default function ContactPage() {
               )}
               {c.mobile && (
                 <li className="flex items-center gap-2.5 text-muted-foreground">
-                  <Smartphone className="size-4 shrink-0 text-ring" />
+                  <Smartphone className="size-4 shrink-0 text-muted-foreground" />
                   <a href={`tel:${c.mobile.replace(/-/g, '')}`} className="hover:text-foreground">
                     {c.mobile}
                   </a>
@@ -118,7 +118,7 @@ export default function ContactPage() {
                 </li>
               )}
               <li className="flex items-center gap-2.5 text-muted-foreground">
-                <Mail className="size-4 shrink-0 text-ring" />
+                <Mail className="size-4 shrink-0 text-muted-foreground" />
                 <a href={`mailto:${c.email}`} className="break-all hover:text-foreground">
                   {c.email}
                 </a>

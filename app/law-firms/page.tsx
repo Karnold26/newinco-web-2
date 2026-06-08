@@ -27,7 +27,7 @@ export default function LawFirmsPage() {
         {paragraphs.map((text, i) => (
           <div
             key={i}
-            className="rounded-2xl border border-border/70 bg-card/60 p-7 leading-relaxed text-foreground/90 backdrop-blur-sm"
+            className="nc-surface p-7 leading-relaxed text-foreground/85"
           >
             <p>{text}</p>
           </div>

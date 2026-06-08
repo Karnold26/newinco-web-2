@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Libre_Baskerville, Source_Sans_3, Geist_Mono } from 'next/font/google'
+import { Libre_Baskerville, DM_Sans, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 const heading = Libre_Baskerville({
@@ -8,7 +8,7 @@ const heading = Libre_Baskerville({
   weight: ['400', '700'],
   subsets: ['latin'],
 })
-const sans = Source_Sans_3({
+const sans = DM_Sans({
   variable: '--font-sans',
   subsets: ['latin'],
 })

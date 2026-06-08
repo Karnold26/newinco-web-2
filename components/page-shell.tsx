@@ -28,19 +28,19 @@ export function PageHeader({
   return (
     <header className="mb-10 max-w-3xl">
       {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.18em] text-ring">
+        <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
           {eyebrow}
         </p>
       )}
-      <h1 className="text-balance font-heading text-3xl text-primary sm:text-4xl">
+      <h1 className="text-balance font-heading text-3xl font-normal text-foreground sm:text-4xl">
         {title}
       </h1>
       {intro && (
-        <p className="mt-4 text-pretty text-lg leading-relaxed text-muted-foreground">
+        <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground">
           {intro}
         </p>
       )}
-      <div className="mt-6 h-px w-24 bg-gradient-to-r from-ring to-transparent" />
+      <div className="mt-8 h-px w-12 bg-foreground" />
     </header>
   )
 }

@@ -31,7 +31,7 @@ export default function LawyersPage() {
       />
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-2xl border border-border/70 bg-card/60 p-7 leading-relaxed text-foreground/90 backdrop-blur-sm">
+        <div className="nc-surface p-7 leading-relaxed text-foreground/85">
           <p>
             It is never our goal to slot you into a position, or to fill a job
             order. It is our goal to match you with the best possible
@@ -40,7 +40,7 @@ export default function LawyersPage() {
             decision for your future.
           </p>
         </div>
-        <div className="rounded-2xl border border-border/70 bg-card/60 p-7 leading-relaxed text-foreground/90 backdrop-blur-sm">
+        <div className="nc-surface p-7 leading-relaxed text-foreground/85">
           <p>
             When you work with our firm, we will ask that you meet with us, in
             complete confidence, to discuss your goals and objectives, your
@@ -52,16 +52,15 @@ export default function LawyersPage() {
       </div>
 
       <section className="mt-12">
-        <h2 className="font-heading text-2xl text-primary">Our Course of Action</h2>
+        <h2 className="font-heading text-xl text-foreground">Our Course of Action</h2>
         <ol className="relative mt-8 ml-1">
-          {/* continuous vertical line spanning the full timeline */}
           <span
             aria-hidden="true"
-            className="absolute left-[18px] top-2 bottom-2 w-px bg-gradient-to-b from-secondary via-border to-transparent"
+            className="absolute left-[17px] top-2 bottom-2 w-px bg-border"
           />
           {steps.map((step, i) => (
             <li key={i} className="relative flex gap-6 pb-8 last:pb-0">
-              <span className="relative z-10 flex size-9 shrink-0 items-center justify-center rounded-full border border-secondary/60 bg-secondary font-heading text-sm font-semibold text-secondary-foreground shadow-sm">
+              <span className="relative z-10 flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-background font-mono text-xs text-muted-foreground">
                 {i + 1}
               </span>
               <p className="pt-1 leading-relaxed text-foreground/90">{step}</p>
