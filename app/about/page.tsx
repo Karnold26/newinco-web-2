@@ -6,7 +6,7 @@ const team = [
   'Jackie Emma',
   'Betty Leach Hawkins',
   'Michael Inman',
-  'Laura Kappock',
+  'Kennon Arnold',
 ]
 
 export const metadata = {
