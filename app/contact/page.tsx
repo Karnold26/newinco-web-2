@@ -46,7 +46,7 @@ const contacts: Contact[] = [
   },
   {
     name: 'Kennon Arnold',
-    direct: '202-973-1323',
+    direct: '202-909-3347',
     email: 'lkappock@newinco.com',
     bioHref: '/team/kennon-arnold',
   },
