@@ -37,7 +37,7 @@ export function SiteHeader() {
           <span className="sr-only">The NewinCo, Inc.</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active = pathname === link.href
             return (
@@ -45,7 +45,7 @@ export function SiteHeader() {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  'px-3 py-2 font-mono text-xs uppercase tracking-[0.15em] transition-colors',
+                  'py-2 font-mono text-xs uppercase tracking-[0.15em] transition-colors',
                   active
                     ? 'text-foreground'
                     : 'text-muted-foreground hover:text-foreground',
@@ -56,13 +56,6 @@ export function SiteHeader() {
             )
           })}
         </nav>
-
-        <Link
-          href="/contact"
-          className="hidden items-center border border-foreground/30 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:border-foreground hover:bg-foreground hover:text-background lg:inline-flex"
-        >
-          Start a Search
-        </Link>
 
         <button
           type="button"
