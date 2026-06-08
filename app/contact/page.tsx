@@ -43,7 +43,7 @@ const contacts: Contact[] = [
     email: 'minman@newinco.com',
   },
   {
-    name: 'Laura Kappock',
+    name: 'Kennon Arnold',
     direct: '202-973-1323',
     email: 'lkappock@newinco.com',
   },
