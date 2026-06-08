@@ -1,12 +1,13 @@
+import Link from 'next/link'
 import { PageShell, PageHeader } from '@/components/page-shell'
 
 const team = [
-  'Marcia B. Newell',
-  'Lacey S. Wingard',
-  'Jackie Emma',
-  'Betty Leach Hawkins',
-  'Michael Inman',
-  'Laura Kappock',
+  { name: 'Marcia B. Newell' },
+  { name: 'Lacey S. Wingard' },
+  { name: 'Jackie Emma' },
+  { name: 'Betty Leach Hawkins' },
+  { name: 'Michael Inman' },
+  { name: 'Kennon Arnold', href: '/team/kennon-arnold' },
 ]
 
 export const metadata = {
@@ -48,22 +49,31 @@ export default function AboutPage() {
       <section className="mt-14">
         <h2 className="font-heading text-2xl text-primary">Our Team</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {team.map((name) => (
+          {team.map((member) => (
             <div
-              key={name}
+              key={member.name}
               className="flex items-center gap-4 rounded-xl border border-border/70 bg-card/60 p-5 backdrop-blur-sm"
             >
               <span
                 className="flex size-11 shrink-0 items-center justify-center rounded-full bg-secondary font-heading text-sm text-secondary-foreground"
                 aria-hidden="true"
               >
-                {name
+                {member.name
                   .split(' ')
                   .map((n) => n[0])
                   .join('')
                   .slice(0, 2)}
               </span>
-              <span className="font-medium text-foreground">{name}</span>
+              {member.href ? (
+                <Link
+                  href={member.href}
+                  className="font-medium text-foreground transition-colors hover:text-primary"
+                >
+                  {member.name}
+                </Link>
+              ) : (
+                <span className="font-medium text-foreground">{member.name}</span>
+              )}
             </div>
           ))}
         </div>

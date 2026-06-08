@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { PageShell, PageHeader } from '@/components/page-shell'
 import { Phone, Smartphone, Mail, MapPin } from 'lucide-react'
 
@@ -12,6 +13,7 @@ type Contact = {
   direct?: string
   mobile?: string
   email: string
+  bioHref?: string
 }
 
 const contacts: Contact[] = [
@@ -43,9 +45,10 @@ const contacts: Contact[] = [
     email: 'minman@newinco.com',
   },
   {
-    name: 'Laura Kappock',
+    name: 'Kennon Arnold',
     direct: '202-973-1323',
     email: 'lkappock@newinco.com',
+    bioHref: '/team/kennon-arnold',
   },
   {
     name: 'Charles Xu',
@@ -83,7 +86,18 @@ export default function ContactPage() {
             key={c.name}
             className="rounded-2xl border border-border/70 bg-card/60 p-6 backdrop-blur-sm transition-shadow hover:shadow-md"
           >
-            <h3 className="font-heading text-lg text-primary">{c.name}</h3>
+            <h3 className="font-heading text-lg text-primary">
+              {c.bioHref ? (
+                <Link
+                  href={c.bioHref}
+                  className="transition-colors hover:text-ring"
+                >
+                  {c.name}
+                </Link>
+              ) : (
+                c.name
+              )}
+            </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               {c.direct && (
                 <li className="flex items-center gap-2.5 text-muted-foreground">
