@@ -3,7 +3,7 @@ import { PageShell, PageHeader } from '@/components/page-shell'
 const team = [
   'Marcia B. Newell',
   'Lacey S. Wingard',
-  'Jackie Reed',
+  'Jackie Emma',
   'Betty Leach Hawkins',
   'Michael Inman',
   'Laura Kappock',

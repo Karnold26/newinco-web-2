@@ -26,7 +26,7 @@ const contacts: Contact[] = [
     email: 'lwingard@newinco.com',
   },
   {
-    name: 'Jackie Reed',
+    name: 'Jackie Emma',
     mobile: '202-251-3249',
     email: 'jreed@newinco.com',
   },
