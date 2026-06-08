@@ -103,15 +103,17 @@ export default function HomePage() {
               <span className="text-muted-foreground">Matrix</span>
             </h2>
 
-            <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
               {services.map((service, i) => (
-                <div key={service.title} className="bg-background p-7">
-                  <span className="font-mono text-xs text-primary">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="mt-6 font-heading text-xl font-extrabold uppercase tracking-tight text-foreground">
-                    {service.title}
-                  </h3>
+                <div key={service.title} className="border-t border-foreground pt-6">
+                  <div className="flex items-baseline justify-between">
+                    <h3 className="font-heading text-xl font-extrabold uppercase tracking-tight text-foreground">
+                      {service.title}
+                    </h3>
+                    <span className="font-mono text-xs text-primary">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                     {service.body}
                   </p>
