@@ -1,11 +1,11 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata } from 'next'
-import { Libre_Baskerville, DM_Sans, Geist_Mono } from 'next/font/google'
+import { Manrope, DM_Sans, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
-const heading = Libre_Baskerville({
+const heading = Manrope({
   variable: '--font-heading',
-  weight: ['400', '700'],
+  weight: ['500', '600', '700', '800'],
   subsets: ['latin'],
 })
 const sans = DM_Sans({
