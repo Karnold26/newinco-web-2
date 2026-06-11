@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight, ArrowDownRight } from 'lucide-react'
 import { AnimatedBackground } from '@/components/animated-background'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -11,22 +10,34 @@ const stats = [
   { value: 'Worldwide', label: 'Reach & Connections' },
 ]
 
-const services = [
+const testimonials = [
   {
-    title: 'Placements',
-    body: 'Precisely the right person for the right position. We place partners and associates at every level of the Am Law 200 and beyond, matching talent with culture, ambition, and opportunity.',
+    quote:
+      'After 22 years at the same firm, I was nervous about making a move. They identified opportunities I never would have found on my own and shepherded the process with total discretion.',
+    author: 'Senior Litigation Partner',
+    firm: 'Placed at Am Law 30 Firm, Chicago',
+    type: 'placement',
   },
   {
-    title: 'Searches',
-    body: 'Strategic talent acquisition for firms seeking to expand their capabilities. We identify candidates whose expertise, reputation, and vision align with your firm\u2019s trajectory.',
+    quote:
+      'I came to them as a seventh-year associate looking to make partner somewhere I actually fit. Within four months I had an offer that exceeded every expectation.',
+    author: 'Corporate Associate',
+    firm: 'Placed at Boutique M&A Firm, New York',
+    type: 'placement',
   },
   {
-    title: 'Acquisitions',
-    body: 'Facilitating practice group mergers and full firm combinations. We navigate the complexities of cultural integration, compensation structures, and strategic alignment.',
+    quote:
+      'The candidates they sent us were genuinely pre-vetted — not just on paper credentials but on cultural fit. We hired two partners in one search cycle and both have been exceptional.',
+    author: 'Hiring Partner',
+    firm: 'Am Law 100 Firm, Washington DC',
+    type: 'hiring',
   },
   {
-    title: 'Placement',
-    body: 'Opening doors to new business opportunities for lawyers and law firms. Leveraging our deep DC connections and global network to drive growth wherever you operate.',
+    quote:
+      'We had been trying to build out our energy practice for two years with no success. NorthCoast delivered three qualified candidates within six weeks. One is now our practice group leader.',
+    author: 'Chief Talent Officer',
+    firm: 'Global 100 Firm, Houston',
+    type: 'hiring',
   },
 ]
 
@@ -38,41 +49,34 @@ export default function HomePage() {
 
       <main>
         {/* Hero */}
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-4 pb-20 pt-16 sm:px-6 sm:pt-24">
-            <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
+        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 h-full w-full object-cover opacity-40"
+            src="/dc-aerial.mp4"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/80" />
+          <div className="relative mx-auto max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24 w-full">
+            <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
               X: 38.8972&deg; &mdash; Y: -77.0369&deg;
             </p>
-            <p className="nc-eyebrow mb-8">Est. 1970s &mdash; Washington, DC</p>
+            <p className="nc-eyebrow mb-8 !text-white/60">Est. 1970s &mdash; Washington, DC</p>
 
-            <h1 className="nc-display max-w-4xl text-6xl text-foreground sm:text-7xl lg:text-[7.5rem]">
+            <h1 className="nc-display max-w-4xl text-6xl text-white sm:text-7xl lg:text-[7.5rem]">
               Your Navigator
               <br />
               <span className="text-primary">In Law</span>
             </h1>
 
-            <div className="mt-12 grid gap-10 lg:grid-cols-[0.55fr_0.45fr]">
-              <p className="max-w-md text-pretty text-base leading-relaxed text-muted-foreground">
+            <div className="mt-12">
+              <p className="max-w-md text-pretty text-base leading-relaxed text-white/70">
                 Pinpoint legal recruitment for the world&apos;s most demanding
                 firms. We listen. We research. We analyze. We place &mdash;
                 precisely.
               </p>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/services"
-                className="inline-flex items-center gap-3 bg-primary px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                Explore Services
-                <ArrowDownRight className="size-4" />
-              </Link>
-              <Link
-                href="/about"
-                className="font-mono text-xs uppercase tracking-[0.18em] text-foreground underline-offset-8 hover:underline"
-              >
-                About the Firm
-              </Link>
             </div>
           </div>
         </section>
@@ -93,30 +97,40 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Service Matrix */}
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
-            <p className="nc-eyebrow mb-8">Capabilities</p>
+        {/* Testimonials */}
+        <section className="border-b border-border overflow-hidden">
+          <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6">
+            <p className="nc-eyebrow mb-8">Client Voices</p>
             <h2 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
-              The Service
+              The Record
               <br />
-              <span className="text-muted-foreground">Matrix</span>
+              <span className="text-muted-foreground">Speaks</span>
             </h2>
-
-            <div className="mt-16 grid gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-              {services.map((service, i) => (
-                <div key={service.title} className="border-t border-foreground pt-6">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="font-heading text-xl font-extrabold uppercase tracking-tight text-foreground">
-                      {service.title}
-                    </h3>
-                    <span className="font-mono text-xs text-primary">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    {service.body}
+          </div>
+          <div className="mt-16 pb-24">
+            <div
+              className="flex w-max gap-6"
+              style={{ animation: 'marquee 35s linear infinite' }}
+            >
+              {[...testimonials, ...testimonials].map((t, i) => (
+                <div
+                  key={i}
+                  className="flex w-80 flex-shrink-0 flex-col justify-between gap-8 border border-border bg-card px-8 py-10"
+                >
+                  <p className="text-sm leading-relaxed text-foreground/80">
+                    &ldquo;{t.quote}&rdquo;
                   </p>
+                  <div className="border-t border-border pt-6">
+                    <p className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-primary">
+                      {t.type === 'placement' ? '— Placed Lawyer' : '— Hiring Partner'}
+                    </p>
+                    <p className="mt-2 font-heading text-sm font-extrabold uppercase tracking-tight text-foreground">
+                      {t.author}
+                    </p>
+                    <p className="mt-1 font-mono text-xs text-muted-foreground">
+                      {t.firm}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -162,7 +176,20 @@ export default function HomePage() {
               className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground lg:self-end"
             >
               Start a Conversation
-              <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
+              >
+                <path d="M7 7h10v10M7 17 17 7" />
+              </svg>
             </Link>
           </div>
         </section>

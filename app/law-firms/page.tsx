@@ -1,38 +1,150 @@
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { PageShell, PageHeader } from '@/components/page-shell'
 
 export const metadata = {
   title: 'Law Firms — The NewinCo, Inc.',
   description:
-    'We tap our longstanding relationships to provide you with access to the very best attorneys in your target practice areas.',
+    'Pinpoint recruitment conducted with total discretion. Your goals stay between us.',
 }
 
-const paragraphs = [
-  'The members of our firm have decades of experience at law firms, as legal placement specialists, as marketing professionals, as lobbyists, and in government. Our contact base, grown over years of working with the most successful firms and practitioners, is unparalleled in the Washington market. We tap our longstanding relationships to provide you with access to the very best attorneys in your target practice areas.',
-  'We know how to identify lawyers who are not looking for new opportunities, but who could be precisely what you are searching for. We know how to engage them, and how to get your message to them.',
-  'If you ask for our assistance in locating precisely that person or group, be prepared for a long list of questions. Information-sharing at the outset will save us all time and energy further down the path, by avoiding unsuitable candidates and dead-end leads.',
-  'We will do the work that would otherwise consume your time, gathering and preparing the data you require to assess a candidacy. We are experts at business and financial analysis, carefully evaluating the pros and cons of each potential candidate, measured against your express criteria and needs. We ask the tough questions at the outset, we run conflict scenarios, we discuss issues of integration and personality and culture. We will do our utmost to provide you not just with candidates, but with solutions.',
-  'Because our business is built entirely on long-term relationships, we will never advise you to pursue a deal that is not in your best interest. It would not advance our interest to do so.',
+const pillars = [
+  {
+    number: '01',
+    title: 'Deep Market Intelligence.',
+    body: 'The best candidates are often not on the market. With decades of relationships across the legal industry, we know who may be open to the right opportunity before anyone else does.',
+  },
+  {
+    number: '02',
+    title: 'Fewer Calls. Less Exposure.',
+    body: 'We do not cast a wide net. Every outreach is deliberate and targeted, reducing market noise and keeping your strategic goals confidential.',
+  },
+  {
+    number: '03',
+    title: 'Controlled Disclosure.',
+    body: "We do not reveal your firm's identity too early in the process. Details are shared only when the timing is right and the candidate is credible, helping protect the confidentiality of your search.",
+  },
+  {
+    number: '04',
+    title: 'Long-Term Relationships Only.',
+    body: 'We will never advise you to pursue a deal that is not in your best interest. Our business is built entirely on trust — and that is not something we trade away for a fee.',
+  },
 ]
 
 export default function LawFirmsPage() {
   return (
     <PageShell>
-      <PageHeader
-        eyebrow="For Law Firms"
-        title="Law Firms"
-        intro="Access to the very best attorneys in your target practice areas, backed by a contact base unparalleled in the Washington market."
-      />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        {paragraphs.map((text, i) => (
-          <div
-            key={i}
-            className="nc-surface p-7 leading-relaxed text-foreground/85"
+      {/* Hero split */}
+      <div className="grid gap-0 lg:grid-cols-2 mb-20">
+        <div className="flex flex-col justify-center gap-8 pr-0 lg:pr-16">
+          <p className="nc-eyebrow">For Law Firms</p>
+          <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
+            Your goals
+            <br />
+            <span className="text-muted-foreground">stay between us.</span>
+          </h1>
+          <p className="text-lg leading-relaxed text-foreground/70 max-w-md">
+            Pinpoint recruitment conducted with total discretion. We identify precisely the right talent — in as few conversations as possible.
+          </p>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 self-start font-mono text-xs uppercase tracking-[0.18em] text-foreground hover:text-primary transition-colors"
           >
-            <p>{text}</p>
+            Start a Conversation
+            <ArrowUpRight className="size-4 text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+        </div>
+        <div className="relative aspect-[4/3] overflow-hidden mt-10 lg:mt-0">
+          <img
+            src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=900&q=80"
+            alt="Washington DC building"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="flex justify-center lg:col-span-2 mt-8 animate-bounce">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-primary"
+          >
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </div>
+      </div>
+
+      {/* Lead statement */}
+      <div className="border-l-2 border-primary pl-8 py-2 max-w-2xl mb-16">
+        <p className="text-xl leading-relaxed text-foreground/80">
+          The fewer people who know your firm is searching, the better. We operate on that principle in everything we do — targeted outreach, tight circles, and absolute confidentiality at every step.
+        </p>
+      </div>
+
+      {/* Pillars */}
+      <div className="grid gap-px bg-border sm:grid-cols-2 mb-20">
+        {pillars.map((p) => (
+          <div key={p.number} className="bg-background p-8 space-y-4">
+            <span className="font-mono text-xs text-primary">{p.number}</span>
+            <h3 className="font-heading text-lg font-extrabold uppercase tracking-tight text-foreground">
+              {p.title}
+            </h3>
+            <p className="text-sm leading-relaxed text-foreground/70">
+              {p.body}
+            </p>
           </div>
         ))}
       </div>
+
+      {/* How we work */}
+      <div className="grid gap-16 lg:grid-cols-2 items-center mb-20">
+        <div className="relative aspect-[4/3] overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&q=80"
+            alt="Professional meeting room"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="space-y-6">
+          <p className="nc-eyebrow">How We Work</p>
+          <div className="space-y-5 text-base leading-relaxed text-foreground/80">
+            <p>
+              Our contact base, grown over decades working with the most successful firms and practitioners, is unparalleled in the Washington market. We know how to identify lawyers who are not looking — but who could be precisely what you need — and how to reach them without exposing your firm's intentions.
+            </p>
+            <p>
+              We ask the tough questions at the outset, run conflict scenarios, and control disclosure of your identity until the timing is right. By the time a candidate reaches you, the hard work is done.
+            </p>
+            <p>
+              Because our business is built entirely on long-term relationships, we will never advise you to pursue a deal that is not in your best interest.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="border-t border-border pt-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="nc-eyebrow mb-4">Ready to Begin?</p>
+          <h2 className="nc-display text-4xl sm:text-5xl">
+            Let&apos;s talk — <br />
+            <span className="text-muted-foreground">in confidence.</span>
+          </h2>
+        </div>
+        <Link
+          href="/contact"
+          className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground sm:self-end"
+        >
+          Start a Conversation
+          <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </Link>
+      </div>
+
     </PageShell>
   )
 }
