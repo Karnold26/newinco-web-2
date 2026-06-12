@@ -50,28 +50,18 @@ export default function HomePage() {
 
       <main>
         {/* Hero */}
-        <section className="relative flex min-h-[90vh] items-center overflow-hidden border-b border-border">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
+        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
+          <img
+            src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=80"
+            alt="Washington DC aerial"
             className="absolute inset-0 h-full w-full object-cover opacity-40"
-          >
-            <source src="/dc-aerial.mp4" type="video/mp4" />
-          </video>
-
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/80" />
-
-          <div className="relative mx-auto w-full max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24">
+          <div className="relative mx-auto max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24 w-full">
             <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
               X: 38.8972&deg; &mdash; Y: -77.0369&deg;
             </p>
-
-            <p className="nc-eyebrow mb-8 !text-white/60">
-              Est. 1970s &mdash; Washington, DC
-            </p>
+            <p className="nc-eyebrow mb-8 !text-white/60">Est. 1970s &mdash; Washington, DC</p>
 
             <h1 className="nc-display max-w-4xl text-6xl text-white sm:text-7xl lg:text-[7.5rem]">
               Your Navigator
@@ -106,7 +96,7 @@ export default function HomePage() {
         </section>
 
         {/* Testimonials */}
-        <section className="overflow-hidden border-b border-border">
+        <section className="border-b border-border overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6">
             <p className="nc-eyebrow mb-8">Client Voices</p>
             <h2 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
@@ -115,7 +105,6 @@ export default function HomePage() {
               <span className="text-muted-foreground">Speaks</span>
             </h2>
           </div>
-
           <div className="mt-16 pb-24">
             <div
               className="flex w-max gap-6"
@@ -129,18 +118,13 @@ export default function HomePage() {
                   <p className="text-sm leading-relaxed text-foreground/80">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-
                   <div className="border-t border-border pt-6">
                     <p className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-primary">
-                      {t.type === 'placement'
-                        ? '— Placed Lawyer'
-                        : '— Hiring Partner'}
+                      {t.type === 'placement' ? '— Placed Lawyer' : '— Hiring Partner'}
                     </p>
-
                     <p className="mt-2 font-heading text-sm font-extrabold uppercase tracking-tight text-foreground">
                       {t.author}
                     </p>
-
                     <p className="mt-1 font-mono text-xs text-muted-foreground">
                       {t.firm}
                     </p>
@@ -155,7 +139,6 @@ export default function HomePage() {
         <section className="border-b border-border">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[0.4fr_0.6fr]">
             <p className="nc-eyebrow">The Approach</p>
-
             <div className="max-w-2xl space-y-6 text-pretty text-lg leading-relaxed text-foreground/80">
               <p>
                 Whether you are in search of a new professional home, or
@@ -164,7 +147,6 @@ export default function HomePage() {
                 individuals and practice groups, led law firm mergers, and
                 placed corporate counsel.
               </p>
-
               <p>
                 The members of our firm have seen the legal world from all
                 sides &mdash; as practitioners, support staff, in-house
@@ -181,14 +163,12 @@ export default function HomePage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-24 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="nc-eyebrow mb-8">Ready to Begin?</p>
-
               <h2 className="nc-display text-6xl text-foreground sm:text-7xl lg:text-8xl">
                 Let&apos;s
                 <br />
                 Connect
               </h2>
             </div>
-
             <Link
               href="/contact"
               className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground lg:self-end"
