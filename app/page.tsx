@@ -52,7 +52,7 @@ export default function HomePage() {
         {/* Hero */}
         <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
           <img
-            src="https://images.unsplash.com/photo-1501780392773-287d506245a5?w=1800&q=80"
+            src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=80"
             alt="Washington DC aerial"
             className="absolute inset-0 h-full w-full object-cover opacity-40"
           />
@@ -183,4 +183,5 @@ export default function HomePage() {
       <SiteFooter />
     </>
   )
+}
 }
