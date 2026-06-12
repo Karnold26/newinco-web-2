@@ -1,142 +1,71 @@
-<<<<<<< HEAD
-=======
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
->>>>>>> newbranch
-import { PageShell, PageHeader } from '@/components/page-shell'
+import { PageShell } from '@/components/page-shell'
 
 export const metadata = {
   title: 'Lawyers — The NewinCo, Inc.',
   description:
-<<<<<<< HEAD
-    'Individual attorney placement. We match you with the best possible opportunity, based upon complete information about the legal market.',
-}
-
-const steps = [
-  'We will conduct a market survey of firms that meet your stated goals, gathering information in a way that fully protects your confidential information and does not betray your identity;',
-  'We will present you with the firms that meet your goals, providing background information about each firm and its practice;',
-  'We will ask your permission to approach these firms on your behalf;',
-  'With that permission, we will identify and present your candidacy and its benefits to the potential acquiring firm;',
-  'Upon your authorization, we will schedule interviews;',
-  'We will prepare you for each meeting, providing background information about the individuals you will meet;',
-  'We will debrief you and obtain feedback after each meeting;',
-  'We will work toward a deal that meets the needs of all parties;',
-  'We will analyze each offer and present the terms;',
-  'We will ensure that the terms of the offer are met;',
-  'We will provide you with the tools and methodology to disengage from your current firm in accordance with the Canons of Ethics;',
-  'We will provide any and all support, at any hour of the day or night, to enable you to move through this process successfully.',
-=======
     'Individual attorney placement conducted with complete discretion. Your identity stays protected throughout.',
 }
 
 const steps = [
   {
     number: '01',
-    title: 'Market Survey.',
-    body: 'We conduct a survey of firms that meet your stated goals, gathering information in a way that fully protects your identity and does not betray your confidentiality.',
+    title: 'We Do the Research First.',
+    body: 'Before your name is mentioned anywhere, we conduct a full market survey — identifying firms that genuinely fit your goals, culture, and trajectory. Dead ends are eliminated before they start.',
   },
   {
     number: '02',
-    title: 'Firm Presentation.',
-    body: 'We present you with firms that meet your goals, providing detailed background information about each firm and its practice — so you can make an informed decision.',
+    title: 'You Choose Who We Approach.',
+    body: 'We present you with a shortlist of firms we believe are the right fit. You review. You decide. Only the firms you approve ever hear your name.',
   },
   {
     number: '03',
-    title: 'Your Permission, Always.',
-    body: 'We ask your permission before approaching any firm on your behalf. Nothing moves forward without your explicit authorization at every step.',
+    title: 'Your Identity Is Protected.',
+    body: 'We do not reveal who you are until the receiving firm has demonstrated serious, credible interest. Your current position is never put at risk.',
   },
   {
     number: '04',
-    title: 'Controlled Introduction.',
-    body: 'With your approval, we identify and present your candidacy and its benefits to the potential acquiring firm — carefully and deliberately.',
+    title: 'Fewer Conversations. Better Outcomes.',
+    body: 'Because our market intelligence is deep and our relationships are longstanding, we move precisely — not broadly. Your candidacy reaches fewer desks, but the right ones.',
   },
   {
     number: '05',
-    title: 'Interview Preparation.',
-    body: 'We schedule interviews upon your authorization and prepare you for each meeting, providing background on the individuals you will meet.',
+    title: 'Full Preparation at Every Step.',
+    body: 'Before every meeting we brief you on the firm, the people, and what to expect. After every meeting we debrief, gather feedback, and adjust.',
   },
   {
     number: '06',
-    title: 'Debrief & Feedback.',
-    body: 'After each meeting we debrief you, obtain feedback, and adjust our approach to work toward a deal that meets the needs of all parties.',
+    title: 'We Work the Deal.',
+    body: 'We analyze every offer, present the terms clearly, and work toward an outcome that meets your goals — not just any offer, but the right one.',
   },
   {
     number: '07',
-    title: 'Offer Analysis.',
-    body: 'We analyze each offer and present the terms clearly, ensuring you understand exactly what is on the table before making any decisions.',
+    title: 'An Ethical Exit.',
+    body: 'We provide the tools and methodology to disengage from your current firm in full accordance with the Canons of Ethics — professionally and cleanly.',
   },
   {
     number: '08',
-    title: 'Through to the End.',
-    body: 'We ensure the terms of the offer are met, provide tools to disengage from your current firm ethically, and offer support at any hour to move you through this process successfully.',
+    title: 'Support Until You Are Settled.',
+    body: 'Our commitment does not end at the offer. We are available at any hour to support you through every stage of the transition.',
   },
->>>>>>> newbranch
 ]
 
 export default function LawyersPage() {
   return (
     <PageShell>
-<<<<<<< HEAD
-      <PageHeader
-        eyebrow="For Lawyers"
-        title="Individual Attorney Placement"
-        intro="If you are taking a peek over the wall to see whether greener pastures lie beyond your garden, let us guide you."
-      />
-
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="nc-surface p-7 leading-relaxed text-foreground/85">
-          <p>
-            It is never our goal to slot you into a position, or to fill a job
-            order. It is our goal to match you with the best possible
-            opportunity, based upon complete information about the legal market.
-            With that information, you will be well-armed to make the best
-            decision for your future.
-          </p>
-        </div>
-        <div className="nc-surface p-7 leading-relaxed text-foreground/85">
-          <p>
-            When you work with our firm, we will ask that you meet with us, in
-            complete confidence, to discuss your goals and objectives, your
-            needs and wants, and to get to know you. We will then, with your
-            permission at every step and maintaining maximum discretion
-            throughout, recommend the following course of action.
-          </p>
-        </div>
-      </div>
-
-      <section className="mt-12">
-        <h2 className="font-heading text-xl text-foreground">Our Course of Action</h2>
-        <ol className="relative mt-8 ml-1">
-          <span
-            aria-hidden="true"
-            className="absolute left-[17px] top-2 bottom-2 w-px bg-border"
-          />
-          {steps.map((step, i) => (
-            <li key={i} className="relative flex gap-6 pb-8 last:pb-0">
-              <span className="relative z-10 flex size-9 shrink-0 items-center justify-center rounded-md border border-border bg-background font-mono text-xs text-muted-foreground">
-                {i + 1}
-              </span>
-              <p className="pt-1 leading-relaxed text-foreground/90">{step}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-    </PageShell>
-  )
-}
-=======
 
       {/* Hero split */}
       <div className="grid gap-0 lg:grid-cols-2 mb-20">
         <div className="flex flex-col justify-center gap-8 pr-0 lg:pr-16">
           <p className="nc-eyebrow">For Lawyers</p>
           <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
-            Your next move,
+            Your name reaches
             <br />
-            <span className="text-muted-foreground">on your terms.</span>
+            <span className="text-muted-foreground">fewer people.</span>
           </h1>
           <p className="text-lg leading-relaxed text-foreground/70 max-w-md">
-            If you are taking a peek over the wall to see whether greener pastures lie beyond your garden, let us guide you — with complete discretion at every step.
+            Because we know the market better than anyone else, we do not need to cast a wide net. Your candidacy goes exactly where it should — and nowhere it shouldn't.
           </p>
           <Link
             href="/contact"
@@ -174,7 +103,7 @@ export default function LawyersPage() {
       {/* Lead statement */}
       <div className="border-l-2 border-primary pl-8 py-2 max-w-2xl mb-16">
         <p className="text-xl leading-relaxed text-foreground/80">
-          It is never our goal to slot you into a position or fill a job order. It is our goal to match you with the best possible opportunity — based on complete information, and with your identity protected throughout.
+          Other recruiters send your name to dozens of firms and wait to see what sticks. We do not work that way. Our experience, connections, and market intelligence mean we already know which firms are the right fit — before your name is ever mentioned.
         </p>
       </div>
 
@@ -206,16 +135,16 @@ export default function LawyersPage() {
           />
         </div>
         <div className="space-y-6">
-          <p className="nc-eyebrow">How We Work</p>
+          <p className="nc-eyebrow">Why It Works</p>
           <div className="space-y-5 text-base leading-relaxed text-foreground/80">
             <p>
-              When you work with our firm, we will ask that you meet with us in complete confidence to discuss your goals and objectives, your needs and wants, and to get to know you.
+              Most recruiters work by volume. We work by precision. Our contact base, built over decades at the highest levels of the Washington legal market, means we already know who is open, which firms are growing, and where the right opportunities exist — before a single call is made.
             </p>
             <p>
-              We will then, with your permission at every step and maintaining maximum discretion throughout, conduct our search. Your identity is never revealed until you authorize it — and no firm is approached without your explicit consent.
+              That intelligence is what keeps your name off unnecessary desks. We approach only the firms we are confident about, only after you have approved them, and only when the timing is right.
             </p>
             <p>
-              We provide as much support as is needed, at any hour, to ensure your transition is successful from first conversation to final offer.
+              The result: a faster, cleaner process — with fewer people knowing you are looking, and a better outcome at the end of it.
             </p>
           </div>
         </div>
@@ -242,4 +171,3 @@ export default function LawyersPage() {
     </PageShell>
   )
 }
->>>>>>> newbranch
