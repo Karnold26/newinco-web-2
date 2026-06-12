@@ -50,14 +50,16 @@ export default function HomePage() {
 
       <main>
         {/* Hero */}
-        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
+        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex flex-col">
           <img
             src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=80"
             alt="Washington DC aerial"
-            className="absolute inset-0 h-full w-full object-cover opacity-40"
+            className="absolute inset-0 h-full w-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/80" />
-          <div className="relative mx-auto max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24 w-full">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+
+          {/* Main content */}
+          <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-24 w-full flex-1 flex flex-col justify-center">
             <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
               X: 38.8972&deg; &mdash; Y: -77.0369&deg;
             </p>
@@ -70,12 +72,48 @@ export default function HomePage() {
             </h1>
 
             <div className="mt-12">
-              <p className="max-w-md text-pretty text-base leading-relaxed text-white/70">
+              <p className="max-w-md text-pretty text-base leading-relaxed text-white/80">
                 Pinpoint legal recruitment for the world&apos;s most demanding
                 firms. We listen. We research. We analyze. We place &mdash;
                 precisely.
               </p>
             </div>
+
+            {/* Two CTAs */}
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="/law-firms"
+                className="inline-flex items-center gap-3 bg-primary px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                For Law Firms
+                <ArrowUpRight className="size-4" />
+              </Link>
+              <Link
+                href="/lawyers"
+                className="inline-flex items-center gap-3 border border-white/50 px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10"
+              >
+                For Lawyers
+                <ArrowUpRight className="size-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="relative flex justify-center pb-10 animate-bounce">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-white/50"
+            >
+              <path d="M12 5v14M5 12l7 7 7-7" />
+            </svg>
           </div>
         </section>
 
