@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { AnimatedBackground } from '@/components/animated-background'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -50,13 +51,10 @@ export default function HomePage() {
       <main>
         {/* Hero */}
         <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
+          <img
+            src="https://images.unsplash.com/photo-1501780392773-287d506245a5?w=1800&q=80"
+            alt="Washington DC aerial"
             className="absolute inset-0 h-full w-full object-cover opacity-40"
-            src="/dc-aerial.mp4"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/80" />
           <div className="relative mx-auto max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24 w-full">
@@ -176,20 +174,7 @@ export default function HomePage() {
               className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground lg:self-end"
             >
               Start a Conversation
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
-              >
-                <path d="M7 7h10v10M7 17 17 7" />
-              </svg>
+              <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </Link>
           </div>
         </section>
