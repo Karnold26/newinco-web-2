@@ -54,9 +54,9 @@ export default function HomePage() {
           <img
             src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=80"
             alt="Washington DC"
-            className="absolute inset-0 h-full w-full object-cover opacity-70"
+            className="absolute inset-0 h-full w-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/15 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
           {/* Main content */}
           <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-28 w-full flex-1 flex flex-col justify-center">

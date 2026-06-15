@@ -1,212 +1,143 @@
 import Link from 'next/link'
-import { ArrowUpRight, ArrowDownRight } from 'lucide-react'
-import { AnimatedBackground } from '@/components/animated-background'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
+import { ArrowUpRight } from 'lucide-react'
+import { PageShell } from '@/components/page-shell'
 
-const stats = [
-  { value: '45+', label: 'Years of Excellence' },
-  { value: '2,500+', label: 'Placements Completed' },
-  { value: '150+', label: 'Am Law 200 Firms Served' },
-  { value: 'Worldwide', label: 'Reach & Connections' },
+export const metadata = {
+  title: 'Our Team — The NewinCo, Inc.',
+  description: 'Meet the team behind The NewinCo.',
+}
+
+const team = [
+  {
+    name: 'Marcia B. Newell',
+    title: 'Founder & Managing Director',
+    email: 'mbnewell@newinco.com',
+    direct: '202-973-1310',
+    mobile: '202-600-1320',
+    slug: 'marcia-newell',
+  },
+  {
+    name: 'Michael Inman',
+    title: 'Recruiter',
+    email: 'minman@newinco.com',
+    direct: '202-973-1327',
+    mobile: '917-509-8434',
+    slug: 'michael-inman',
+  },
+  {
+    name: 'Betty Leach Hawkins',
+    title: 'Recruiter',
+    email: 'bhawkins@newinco.com',
+    direct: '202-973-1345',
+    mobile: '202-997-1511',
+    slug: 'betty-hawkins',
+  },
+  {
+    name: 'Kennon Arnold',
+    title: 'Recruiter',
+    email: 'karnold@newinco.com',
+    direct: '202-973-1353',
+    mobile: '202-909-3347',
+    slug: 'kennon-arnold',
+  },
+  {
+    name: 'Sarah Moriarty',
+    title: 'Recruiter',
+    email: 'smoriarty@newinco.com',
+    direct: '202-973-1360',
+    mobile: '202-555-0192',
+    slug: 'sarah-moriarty',
+  },
 ]
 
-const testimonials = [
-  {
-    quote:
-      'After 22 years at the same firm, I was nervous about making a move. They identified opportunities I never would have found on my own and shepherded the process with total discretion.',
-    author: 'Senior Litigation Partner',
-    firm: 'Placed at Am Law 30 Firm, Chicago',
-    type: 'placement',
-  },
-  {
-    quote:
-      'I came to them as a seventh-year associate looking to make partner somewhere I actually fit. Within four months I had an offer that exceeded every expectation.',
-    author: 'Corporate Associate',
-    firm: 'Placed at Boutique M&A Firm, New York',
-    type: 'placement',
-  },
-  {
-    quote:
-      'The candidates they sent us were genuinely pre-vetted — not just on paper credentials but on cultural fit. We hired two partners in one search cycle and both have been exceptional.',
-    author: 'Hiring Partner',
-    firm: 'Am Law 100 Firm, Washington DC',
-    type: 'hiring',
-  },
-  {
-    quote:
-      'We had been trying to build out our energy practice for two years with no success. NorthCoast delivered three qualified candidates within six weeks. One is now our practice group leader.',
-    author: 'Chief Talent Officer',
-    firm: 'Global 100 Firm, Houston',
-    type: 'hiring',
-  },
-]
-
-export default function HomePage() {
+export default function TeamPage() {
   return (
-    <>
-      <AnimatedBackground />
-      <SiteHeader />
+    <PageShell>
+      {/* Header */}
+      <div className="border-b border-border pb-16 mb-16">
+        <p className="nc-eyebrow mb-6">The People</p>
+        <div className="grid lg:grid-cols-[0.5fr_0.5fr] gap-12 items-end">
+          <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
+            The team
+            <br />
+            <span className="text-muted-foreground">behind the firm.</span>
+          </h1>
+          <p className="text-lg leading-relaxed text-foreground/70 max-w-md">
+            Our recruiters have seen the legal world from all sides — as practitioners, in-house counsel, and marketing professionals. We are Beltway insiders with connections that run deep.
+          </p>
+        </div>
+      </div>
 
-      <main>
-        {/* Hero */}
-        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex items-center">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 h-full w-full object-cover opacity-40"
-            src="/dc-aerial.mp4"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/20 to-background/80" />
-          <div className="relative mx-auto max-w-7xl px-4 pb-40 pt-16 sm:px-6 sm:pt-24 w-full">
-            <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
-              X: 38.8972&deg; &mdash; Y: -77.0369&deg;
-            </p>
-            <p className="nc-eyebrow mb-8 !text-white/60">Est. 1970s &mdash; Washington, DC</p>
+      {/* Team grid */}
+      <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mb-24">
+        {team.map((member) => (
+          <div key={member.name} className="group">
 
-            <h1 className="nc-display max-w-4xl text-6xl text-white sm:text-7xl lg:text-[7.5rem]">
-              Your Navigator
-              <br />
-              <span className="text-primary">In Law</span>
-            </h1>
-
-            <div className="mt-12 grid gap-10 lg:grid-cols-[0.55fr_0.45fr]">
-              <p className="max-w-md text-pretty text-base leading-relaxed text-white/70">
-                Pinpoint legal recruitment for the world&apos;s most demanding
-                firms. We listen. We research. We analyze. We place &mdash;
-                precisely.
-              </p>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-4">
-              <Link
-                href="/law-firms"
-                className="inline-flex items-center gap-3 bg-primary px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                For Law Firms
-                <ArrowUpRight className="size-4" />
-              </Link>
-              <Link
-                href="/lawyers"
-                className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white/80 transition-colors hover:border-white/70 hover:text-white"
-              >
-                For Lawyers
-                <ArrowUpRight className="size-4" />
-              </Link>
-              <Link
-                href="/about"
-                className="font-mono text-xs uppercase tracking-[0.18em] text-white/60 underline-offset-8 hover:underline"
-              >
-                About the Firm
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Stats ticker */}
-        <section className="border-b border-border bg-card">
-          <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-border px-4 sm:px-6 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="px-4 py-6 first:pl-0">
-                <span className="font-heading text-xl font-extrabold text-primary">
-                  {stat.value}
-                </span>{' '}
-                <span className="font-mono text-[0.7rem] uppercase tracking-[0.15em] text-muted-foreground">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="border-b border-border overflow-hidden">
-          <div className="mx-auto max-w-7xl px-4 pt-24 sm:px-6">
-            <p className="nc-eyebrow mb-8">Client Voices</p>
-            <h2 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
-              The Record
-              <br />
-              <span className="text-muted-foreground">Speaks</span>
-            </h2>
-          </div>
-          <div className="mt-16 pb-24">
-            <div
-              className="flex w-max gap-6"
-              style={{ animation: 'marquee 35s linear infinite' }}
-            >
-              {[...testimonials, ...testimonials].map((t, i) => (
-                <div
-                  key={i}
-                  className="flex w-80 flex-shrink-0 flex-col justify-between gap-8 border border-border bg-card px-8 py-10"
-                >
-                  <p className="text-sm leading-relaxed text-foreground/80">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <div className="border-t border-border pt-6">
-                    <p className="font-mono text-[0.6rem] uppercase tracking-[0.15em] text-primary">
-                      {t.type === 'placement' ? '— Placed Lawyer' : '— Hiring Partner'}
-                    </p>
-                    <p className="mt-2 font-heading text-sm font-extrabold uppercase tracking-tight text-foreground">
-                      {t.author}
-                    </p>
-                    <p className="mt-1 font-mono text-xs text-muted-foreground">
-                      {t.firm}
-                    </p>
-                  </div>
+            {/* Photo */}
+            <Link href={`/team/${member.slug}`} className="block mb-5">
+              <div className="relative aspect-square overflow-hidden bg-muted">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="font-heading text-6xl font-extrabold text-muted-foreground/20">
+                    {member.name.split(' ').map((n) => n[0] ?? '').join('').slice(0, 2)}
+                  </span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Approach */}
-        <section className="border-b border-border">
-          <div className="mx-auto grid max-w-7xl gap-12 px-4 py-24 sm:px-6 lg:grid-cols-[0.4fr_0.6fr]">
-            <p className="nc-eyebrow">The Approach</p>
-            <div className="max-w-2xl space-y-6 text-pretty text-lg leading-relaxed text-foreground/80">
-              <p>
-                Whether you are in search of a new professional home, or
-                expanded expertise for your firm, we have the background,
-                experience and market information to guide you. We have moved
-                individuals and practice groups, led law firm mergers, and
-                placed corporate counsel.
-              </p>
-              <p>
-                The members of our firm have seen the legal world from all
-                sides &mdash; as practitioners, support staff, in-house
-                recruiters, and marketing professionals. We are insiders with
-                inside information, and we provide as much support as is needed
-                to ensure success.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="bg-accent">
-          <div className="mx-auto flex max-w-7xl flex-col gap-12 px-4 py-24 sm:px-6 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="nc-eyebrow mb-8">Ready to Begin?</p>
-              <h2 className="nc-display text-6xl text-foreground sm:text-7xl lg:text-8xl">
-                Let&apos;s
-                <br />
-                Connect
-              </h2>
-            </div>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground lg:self-end"
-            >
-              Start a Conversation
-              <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
+              </div>
             </Link>
-          </div>
-        </section>
-      </main>
 
-      <SiteFooter />
-    </>
+            {/* Name & title */}
+            <Link href={`/team/${member.slug}`} className="block mb-4">
+              <p className="font-heading text-lg font-extrabold uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">
+                {member.name}
+              </p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                {member.title}
+              </p>
+            </Link>
+
+            {/* Divider */}
+            <div className="border-t border-border pt-4 space-y-1.5">
+              <Link
+                href={`mailto:${member.email}`}
+                className="block font-mono text-xs text-primary hover:underline"
+              >
+                {member.email}
+              </Link>
+              <Link
+                href={`tel:${member.direct}`}
+                className="block font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {member.direct} direct
+              </Link>
+              <Link
+                href={`tel:${member.mobile}`}
+                className="block font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {member.mobile} mobile
+              </Link>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div className="border-t border-border pt-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="nc-eyebrow mb-4">Ready to Begin?</p>
+          <h2 className="nc-display text-4xl sm:text-5xl">
+            Let&apos;s talk —<br />
+            <span className="text-muted-foreground">in confidence.</span>
+          </h2>
+        </div>
+        <Link
+          href="/contact"
+          className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground sm:self-end"
+        >
+          Start a Conversation
+          <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+        </Link>
+      </div>
+    </PageShell>
   )
 }

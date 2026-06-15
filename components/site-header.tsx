@@ -1,5 +1,4 @@
 'use client'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -8,18 +7,15 @@ import { cn } from '@/lib/utils'
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Services' },
+  { href: '/services', label: 'Our Team' },
   { href: '/law-firms', label: 'Law Firms' },
   { href: '/lawyers', label: 'Lawyers' },
-  { href: '/news', label: 'News & Events' },
-  { href: '/resources', label: 'Resources' },
   { href: '/contact', label: 'Contact Us' },
 ]
 
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
-
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/85 backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
@@ -36,7 +32,6 @@ export function SiteHeader() {
           </span>
           <span className="sr-only">The NewinCo, Inc.</span>
         </Link>
-
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
           {navLinks.map((link) => {
             const active = pathname === link.href
@@ -56,7 +51,6 @@ export function SiteHeader() {
             )
           })}
         </nav>
-
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
@@ -67,7 +61,6 @@ export function SiteHeader() {
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
-
       {open && (
         <nav
           className="border-t border-border bg-background px-4 py-2 lg:hidden"
