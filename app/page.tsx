@@ -50,29 +50,30 @@ export default function HomePage() {
 
       <main>
         {/* Hero */}
-        <section className="relative border-b border-border overflow-hidden min-h-[90vh] flex flex-col">
+        <section className="relative border-b border-border overflow-hidden min-h-[92vh] flex flex-col">
           <img
             src="https://images.unsplash.com/photo-1501466044931-62695aada8e9?w=1800&q=80"
-            alt="Washington DC aerial"
-            className="absolute inset-0 h-full w-full object-cover opacity-60"
+            alt="Washington DC"
+            className="absolute inset-0 h-full w-full object-cover opacity-25"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+          <div className="absolute inset-0 bg-background/75" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
 
           {/* Main content */}
-          <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-24 w-full flex-1 flex flex-col justify-center">
-            <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-white/60">
+          <div className="relative mx-auto max-w-7xl px-4 pt-16 pb-16 sm:px-6 sm:pt-28 w-full flex-1 flex flex-col justify-center">
+            <p className="mb-12 font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
               X: 38.8972&deg; &mdash; Y: -77.0369&deg;
             </p>
-            <p className="nc-eyebrow mb-8 !text-white/60">Est. 1970s &mdash; Washington, DC</p>
+            <p className="nc-eyebrow mb-8">Est. 1970s &mdash; Washington, DC</p>
 
-            <h1 className="nc-display max-w-4xl text-6xl text-white sm:text-7xl lg:text-[7.5rem]">
+            <h1 className="nc-display max-w-4xl text-6xl text-foreground sm:text-7xl lg:text-[7.5rem]">
               Your Navigator
               <br />
               <span className="text-primary">In Law</span>
             </h1>
 
             <div className="mt-12">
-              <p className="max-w-md text-pretty text-base leading-relaxed text-white/80">
+              <p className="max-w-md text-pretty text-base leading-relaxed text-muted-foreground">
                 Pinpoint legal recruitment for the world&apos;s most demanding
                 firms. We listen. We research. We analyze. We place &mdash;
                 precisely.
@@ -90,7 +91,7 @@ export default function HomePage() {
               </Link>
               <Link
                 href="/lawyers"
-                className="inline-flex items-center gap-3 border border-white/50 px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:bg-white/10"
+                className="inline-flex items-center gap-3 border border-border px-7 py-4 font-mono text-xs uppercase tracking-[0.18em] text-foreground transition-colors hover:border-foreground"
               >
                 For Lawyers
                 <ArrowUpRight className="size-4" />
@@ -110,7 +111,7 @@ export default function HomePage() {
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-white/50"
+              className="text-primary"
             >
               <path d="M12 5v14M5 12l7 7 7-7" />
             </svg>
