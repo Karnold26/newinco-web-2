@@ -56,15 +56,24 @@ export default function TeamPage() {
       {/* Header */}
       <div className="border-b border-border pb-16 mb-16">
         <p className="nc-eyebrow mb-6">The People</p>
-        <div className="grid lg:grid-cols-[0.5fr_0.5fr] gap-12 items-end">
-          <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
-            The team
-            <br />
-            <span className="text-muted-foreground">behind the firm.</span>
-          </h1>
-          <p className="text-lg leading-relaxed text-foreground/70 max-w-md">
-            Our recruiters have seen the legal world from all sides — as practitioners, in-house counsel, and marketing professionals. We are Beltway insiders with connections that run deep.
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
+              The team
+              <br />
+              <span className="text-muted-foreground">behind the firm.</span>
+            </h1>
+            <p className="mt-8 text-lg leading-relaxed text-foreground/70 max-w-md">
+              Our recruiters have seen the legal world from all sides — as practitioners, in-house counsel, and marketing professionals. We are Beltway insiders with connections that run deep.
+            </p>
+          </div>
+          <div className="relative aspect-[16/9] overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?w=1200&q=80"
+              alt="Avenue of the Americas"
+              className="h-full w-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
@@ -95,7 +104,7 @@ export default function TeamPage() {
               </p>
             </Link>
 
-            {/* Divider */}
+            {/* Contact */}
             <div className="border-t border-border pt-4 space-y-1.5">
               <Link
                 href={`mailto:${member.email}`}
