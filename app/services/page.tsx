@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { PageShell } from '@/components/page-shell'
+import { AnimatedBackground } from '@/components/animated-background'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 
 export const metadata = {
   title: 'Our Team — The NewinCo, Inc.',
@@ -52,101 +54,81 @@ const team = [
 
 export default function TeamPage() {
   return (
-    <PageShell>
-      {/* Header */}
-      <div className="border-b border-border pb-16 mb-16">
-        <p className="nc-eyebrow mb-6">The People</p>
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="nc-display text-5xl sm:text-6xl lg:text-7xl">
-              The team
-              <br />
-              <span className="text-muted-foreground">behind the firm.</span>
-            </h1>
-            <p className="mt-8 text-lg leading-relaxed text-foreground/70 max-w-md">
-              Our recruiters have seen the legal world from all sides — as practitioners, in-house counsel, and marketing professionals. We are Beltway insiders with connections that run deep.
-            </p>
-          </div>
-          <div className="relative aspect-[16/9] overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1500916434205-0c77489c6cf7?w=1200&q=80"
-              alt="Avenue of the Americas"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
+    <>
+      <AnimatedBackground />
+      <div className="sticky top-0 z-50 bg-background">
+        <SiteHeader />
       </div>
 
-      {/* Team grid */}
-      <div className="grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mb-24">
-        {team.map((member) => (
-          <div key={member.name} className="group">
+      {/* Hero — full-bleed, sits above the padded main on purpose */}
+      <section className="relative overflow-hidden border-b border-border min-h-[55vh] flex items-center">
+        <img
+          src="https://images.unsplash.com/photo-1685454578722-a0cc29a302c7?w=1800&q=80"
+          alt="New York City skyline with One World Trade Center"
+          className="absolute inset-0 h-full w-full object-cover opacity-70"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/60" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full py-16">
+          <p className="nc-eyebrow mb-6 !text-white/70">The People</p>
+          <h1 className="nc-display text-5xl text-white sm:text-6xl lg:text-7xl">
+            The Team
+            <br />
+            <span className="text-primary">Behind the Firm</span>
+          </h1>
+          <p className="mt-8 max-w-md text-pretty text-base leading-relaxed text-white/80">
+            Our recruiters have seen the legal world from all sides — as practitioners, in-house counsel, and marketing professionals. We are Beltway insiders with connections that run deep.
+          </p>
+        </div>
+      </section>
 
-            {/* Photo */}
-            <Link href={`/team/${member.slug}`} className="block mb-5">
-              <div className="relative aspect-square overflow-hidden bg-muted">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-heading text-6xl font-extrabold text-muted-foreground/20">
-                    {member.name.split(' ').map((n) => n[0] ?? '').join('').slice(0, 2)}
-                  </span>
+      <main className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+
+        {/* Roster — everyone, one list */}
+        <div className="mb-24">
+          <p className="nc-eyebrow mb-8">The Team</p>
+          <div className="divide-y divide-border border-t border-border">
+            {team.map((member) => (
+              <Link
+                key={member.name}
+                href={`/team/${member.slug}`}
+                className="group flex flex-col gap-2 py-6 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+              >
+                <div>
+                  <p className="font-heading text-lg font-extrabold uppercase tracking-tight text-foreground transition-colors group-hover:text-primary">
+                    {member.name}
+                  </p>
+                  <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
+                    {member.title}
+                  </p>
                 </div>
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors" />
-              </div>
-            </Link>
-
-            {/* Name & title */}
-            <Link href={`/team/${member.slug}`} className="block mb-4">
-              <p className="font-heading text-lg font-extrabold uppercase tracking-tight text-foreground group-hover:text-primary transition-colors">
-                {member.name}
-              </p>
-              <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-muted-foreground">
-                {member.title}
-              </p>
-            </Link>
-
-            {/* Contact */}
-            <div className="border-t border-border pt-4 space-y-1.5">
-              <Link
-                href={`mailto:${member.email}`}
-                className="block font-mono text-xs text-primary hover:underline"
-              >
-                {member.email}
+                <p className="font-mono text-xs text-muted-foreground transition-colors group-hover:text-foreground sm:text-right">
+                  {member.email} · {member.direct}
+                </p>
               </Link>
-              <Link
-                href={`tel:${member.direct}`}
-                className="block font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {member.direct} direct
-              </Link>
-              <Link
-                href={`tel:${member.mobile}`}
-                className="block font-mono text-xs text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {member.mobile} mobile
-              </Link>
-            </div>
-
+            ))}
           </div>
-        ))}
-      </div>
-
-      {/* CTA */}
-      <div className="border-t border-border pt-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="nc-eyebrow mb-4">Ready to Begin?</p>
-          <h2 className="nc-display text-4xl sm:text-5xl">
-            Let&apos;s talk —<br />
-            <span className="text-muted-foreground">in confidence.</span>
-          </h2>
         </div>
-        <Link
-          href="/contact"
-          className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground sm:self-end"
-        >
-          Start a Conversation
-          <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-        </Link>
-      </div>
-    </PageShell>
+
+        {/* CTA */}
+        <div className="border-t border-border pt-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="nc-eyebrow mb-4">Ready to Begin?</p>
+            <h2 className="nc-display text-4xl sm:text-5xl">
+              Let&apos;s talk —<br />
+              <span className="text-muted-foreground">in confidence.</span>
+            </h2>
+          </div>
+          <Link
+            href="/contact"
+            className="group inline-flex items-center gap-3 self-start font-mono text-sm uppercase tracking-[0.18em] text-foreground sm:self-end"
+          >
+            Start a Conversation
+            <ArrowUpRight className="size-5 text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </Link>
+        </div>
+      </main>
+
+      <SiteFooter />
+    </>
   )
 }
