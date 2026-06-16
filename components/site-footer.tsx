@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const navLinks = [
   { href: '/about', label: 'About' },
-  { href: '/Our Team', label: 'Our Team' },
+  { href: '/services', label: 'Our Team' },
   { href: '/lawyers', label: 'Lawyers' },
   { href: '/law-firms', label: 'Law Firms' },
   { href: '/contact', label: 'Contact' },
