@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'The NewinCo, Inc. — Worldwide Attorney Search & Acquisition',
   description:
-    'The NewinCo is a boutique firm specializing in the placement of top legal talent in Washington and around the world. Your navigator in the search for legal excellence.',
+    'The NewinCo, Inc. is a boutique firm specializing in the placement of top legal talent in Washington and around the world. NewinCo is your navigator in the search for legal excellence.',
   generator: 'v0.app',
   icons: {
     icon: [

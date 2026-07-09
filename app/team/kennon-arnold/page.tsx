@@ -5,7 +5,7 @@ import { ArrowLeft, Mail, Phone } from 'lucide-react'
 export const metadata = {
   title: 'Kennon Arnold — The NewinCo, Inc.',
   description:
-    'Kennon Arnold is a recruiting professional focused on attorney recruiting and lateral partner movement at The NewinCo.',
+    'Kennon Arnold is a recruiting professional focused on attorney recruiting and lateral partner movement at NewinCo.',
 }
 
 export default function KennonArnoldPage() {

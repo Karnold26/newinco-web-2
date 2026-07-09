@@ -22,7 +22,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="flex items-center gap-3"
-          aria-label="The NewinCo home"
+          aria-label="The NewinCo, Inc. home"
         >
           <span className="nc-mark" aria-hidden="true">
             N

@@ -5,7 +5,7 @@ import { PageShell } from '@/components/page-shell'
 export const metadata = {
   title: 'About Us — The NewinCo, Inc.',
   description:
-    'The NewinCo provides search and recruitment counseling and placement services solely to attorneys, law firms and corporations.',
+    'The NewinCo, Inc. provides search and recruitment counseling and placement services solely to attorneys, law firms and corporations.',
 }
 
 export default function AboutPage() {
@@ -21,7 +21,7 @@ export default function AboutPage() {
           <span className="text-muted-foreground">inside information.</span>
         </h1>
         <p className="mt-4 text-base leading-relaxed text-foreground/70 sm:text-lg">
-          Established in Washington, DC, The NewinCo provides search and recruitment counseling and placement services solely to attorneys, law firms and corporations.
+          Established in Washington, DC, The NewinCo, Inc. provides search and recruitment counseling and placement services solely to attorneys, law firms and corporations.
         </p>
         <Link
           href="/contact"
@@ -42,7 +42,7 @@ export default function AboutPage() {
       {/* Body */}
       <div className="max-w-2xl mx-auto space-y-3 text-sm leading-relaxed text-foreground/80 sm:text-base mb-10">
         <p>
-          Established in 2002 in Washington, DC, The NewinCo has placed partners, associates, counsel and general counsel in law firms and corporations around the world. In our many years of professional experience we have shepherded law firm mergers, strategized law firm expansions, recruited teams to launch new offices and counseled countless clients to achieve their professional objectives.
+          Established in 2002 in Washington, DC, NewinCo has placed partners, associates, counsel and general counsel in law firms and corporations around the world. In our many years of professional experience we have shepherded law firm mergers, strategized law firm expansions, recruited teams to launch new offices and counseled countless clients to achieve their professional objectives.
         </p>
         <p>
           The members of our firm have seen the legal world from all sides — as practitioners, support staff, in-house recruiters, and marketing professionals. We are Beltway insiders with powerful legal market connections at both the private and public sector levels. We provide as much support as is needed to ensure success — and we stick around long after the placement is made.

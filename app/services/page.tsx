@@ -7,7 +7,7 @@ import { teamMembers } from '@/lib/team-members'
 
 export const metadata = {
   title: 'Our Team — The NewinCo, Inc.',
-  description: 'Meet the team behind The NewinCo.',
+  description: 'Meet the team behind NewinCo.',
 }
 
 export default function TeamPage() {

@@ -58,7 +58,7 @@ export const teamMembers: TeamMember[] = [
     name: 'Kennon Arnold',
     title: 'Recruiter',
     email: 'karnold@newinco.com',
-    direct: '202-973-1353',
+    direct: '202-973-1323',
     mobile: '202-909-3347',
     slug: 'kennon-arnold',
     summary:
