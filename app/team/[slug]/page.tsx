@@ -1,14 +1,50 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { ArrowLeft, Mail, Phone, Smartphone } from 'lucide-react'
 import { PageShell } from '@/components/page-shell'
-import { ArrowLeft, Mail, Phone } from 'lucide-react'
+import { getTeamMemberBySlug, teamMembers } from '@/lib/team-members'
 
-export const metadata = {
-  title: 'Kennon Arnold — The NewinCo, Inc.',
-  description:
-    'Kennon Arnold is a recruiting professional focused on attorney recruiting and lateral partner movement at The NewinCo.',
+type TeamMemberPageProps = {
+  params: Promise<{
+    slug: string
+  }>
 }
 
-export default function KennonArnoldPage() {
+export async function generateStaticParams() {
+  return teamMembers.map((member) => ({
+    slug: member.slug,
+  }))
+}
+
+export async function generateMetadata({ params }: TeamMemberPageProps) {
+  const { slug } = await params
+  const member = getTeamMemberBySlug(slug)
+
+  if (!member) {
+    return {
+      title: 'Team Member — The NewinCo, Inc.',
+    }
+  }
+
+  return {
+    title: `${member.name} — The NewinCo, Inc.`,
+    description: `${member.name} is ${member.summary.toLowerCase()} at The NewinCo, Inc.`,
+  }
+}
+
+export default async function TeamMemberPage({ params }: TeamMemberPageProps) {
+  const { slug } = await params
+  const member = getTeamMemberBySlug(slug)
+
+  if (!member) {
+    notFound()
+  }
+
+  const bioParagraphs = member.bio ?? [
+    `${member.name} serves as ${member.title.toLowerCase()} at The NewinCo, Inc. and is part of the firm's team supporting legal recruiting and confidential career conversations.`,
+    `A full biography for ${member.name.split(' ')[0]} will be published soon. In the meantime, please use the contact information below to get in touch directly.`,
+  ]
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-background">
       <div
@@ -48,12 +84,11 @@ export default function KennonArnoldPage() {
                 </p>
 
                 <h1 className="mt-4 font-heading text-5xl leading-tight text-foreground sm:text-6xl">
-                  Kennon Arnold
+                  {member.name}
                 </h1>
 
                 <p className="mt-5 max-w-2xl text-xl leading-relaxed text-muted-foreground">
-                  Recruiting professional focused on attorney recruiting and
-                  lateral partner movement.
+                  {member.summary}
                 </p>
               </div>
 
@@ -64,19 +99,29 @@ export default function KennonArnoldPage() {
 
                 <div className="mt-5 space-y-3 text-sm">
                   <a
-                    href="tel:2029731323"
+                    href={`tel:${member.direct.replace(/-/g, '')}`}
                     className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <Phone className="size-4" aria-hidden="true" />
-                    <span>202-973-1323</span>
+                    <span>{member.direct}</span>
                   </a>
 
+                  {member.mobile && (
+                    <a
+                      href={`tel:${member.mobile.replace(/-/g, '')}`}
+                      className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-foreground"
+                    >
+                      <Smartphone className="size-4" aria-hidden="true" />
+                      <span>{member.mobile}</span>
+                    </a>
+                  )}
+
                   <a
-                    href="mailto:karnold@newinco.com"
+                    href={`mailto:${member.email}`}
                     className="flex items-center gap-3 break-all text-muted-foreground transition-colors hover:text-foreground"
                   >
                     <Mail className="size-4 shrink-0" aria-hidden="true" />
-                    <span>karnold@newinco.com</span>
+                    <span>{member.email}</span>
                   </a>
                 </div>
               </div>
@@ -90,26 +135,9 @@ export default function KennonArnoldPage() {
               </div>
 
               <div className="max-w-3xl space-y-6 text-lg leading-8 text-foreground/80">
-                <p>
-                  Kennon Arnold is a recruiting professional focused on attorney
-                  recruiting and lateral partner movement. He brings a
-                  research-driven approach to recruiting, using market
-                  intelligence alongside a genuine effort to understand each
-                  attorney&apos;s practice and goals in order to help attorneys
-                  make informed career decisions. Prior to joining NewinCo,
-                  Kennon worked on the analytics side of another search firm,
-                  supporting partner recruitment from initial market research
-                  through deal execution, providing analysis and intelligence
-                  throughout the whole process.
-                </p>
-
-                <p>
-                  Kennon is known for being responsive and easy to work with. He
-                  approaches each conversation with curiosity and care, asking
-                  thoughtful questions to understand what matters most. His
-                  practical style helps attorneys and firms feel informed,
-                  comfortable, and confident throughout a search.
-                </p>
+                {bioParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
             </section>
           </main>

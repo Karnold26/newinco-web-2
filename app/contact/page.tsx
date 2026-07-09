@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { PageShell, PageHeader } from '@/components/page-shell'
 import { Phone, Smartphone, Mail, MapPin } from 'lucide-react'
+import { teamMembers } from '@/lib/team-members'
 
 export const metadata = {
   title: 'Contact Us — The NewinCo, Inc.',
@@ -17,39 +18,13 @@ type Contact = {
 }
 
 const contacts: Contact[] = [
-  {
-    name: 'Marcia B. Newell',
-    direct: '202-973-1310',
-    mobile: '202-600-1320',
-    email: 'mbnewell@newinco.com',
-  },
-  {
-    name: 'Lacey S. Wingard',
-    email: 'lwingard@newinco.com',
-  },
-  {
-    name: 'Jackie Emma',
-    mobile: '202-251-3249',
-    email: 'jreed@newinco.com',
-  },
-  {
-    name: 'Betty L. Hawkins',
-    direct: '202-973-1345',
-    mobile: '202-997-1511',
-    email: 'bhawkins@newinco.com',
-  },
-  {
-    name: 'Michael Inman',
-    direct: '202-973-1327',
-    mobile: '917-509-8434',
-    email: 'minman@newinco.com',
-  },
-  {
-    name: 'Kennon Arnold',
-    direct: '202-909-3347',
-    email: 'lkappock@newinco.com',
-    bioHref: '/team/kennon-arnold',
-  },
+  ...teamMembers.map((member) => ({
+    name: member.name,
+    direct: member.direct,
+    mobile: member.mobile,
+    email: member.email,
+    bioHref: `/team/${member.slug}`,
+  })),
   {
     name: 'Charles Xu',
     direct: '202-973-1348',

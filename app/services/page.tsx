@@ -3,54 +3,12 @@ import { ArrowUpRight } from 'lucide-react'
 import { AnimatedBackground } from '@/components/animated-background'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { teamMembers } from '@/lib/team-members'
 
 export const metadata = {
   title: 'Our Team — The NewinCo, Inc.',
   description: 'Meet the team behind The NewinCo.',
 }
-
-const team = [
-  {
-    name: 'Marcia B. Newell',
-    title: 'Founder & Managing Director',
-    email: 'mbnewell@newinco.com',
-    direct: '202-973-1310',
-    mobile: '202-600-1320',
-    slug: 'marcia-newell',
-  },
-  {
-    name: 'Michael Inman',
-    title: 'Recruiter',
-    email: 'minman@newinco.com',
-    direct: '202-973-1327',
-    mobile: '917-509-8434',
-    slug: 'michael-inman',
-  },
-  {
-    name: 'Betty Leach Hawkins',
-    title: 'Recruiter',
-    email: 'bhawkins@newinco.com',
-    direct: '202-973-1345',
-    mobile: '202-997-1511',
-    slug: 'betty-hawkins',
-  },
-  {
-    name: 'Kennon Arnold',
-    title: 'Recruiter',
-    email: 'karnold@newinco.com',
-    direct: '202-973-1353',
-    mobile: '202-909-3347',
-    slug: 'kennon-arnold',
-  },
-  {
-    name: 'Sarah Moriarty',
-    title: 'Recruiter',
-    email: 'smoriarty@newinco.com',
-    direct: '202-973-1360',
-    mobile: '202-555-0192',
-    slug: 'sarah-moriarty',
-  },
-]
 
 export default function TeamPage() {
   return (
@@ -87,7 +45,7 @@ export default function TeamPage() {
         <div className="mb-24">
           <p className="nc-eyebrow mb-8">The Team</p>
           <div className="divide-y divide-border border-t border-border">
-            {team.map((member) => (
+            {teamMembers.map((member) => (
               <Link
                 key={member.name}
                 href={`/team/${member.slug}`}
